@@ -4,16 +4,14 @@
 %rise time is defined as the time taken for amplitude to reach 10 to 100%
 %decay time is time taken for signal to decay to 10% of amplitude
 %width is the full width at half max amplitude of the event
-%max_dvdt is maximum dv/dt of the spike
 % Input arguments: event= array corresponding to Vm of one event
 %     time= time stamps corresponding to one event
 % Output arguments: Risetime= float
 %     Decaytime= float
 %     Width= float
-%       max_dvdt=float 
 % values for all of the above can be NaN in case the event does not have a
 % action potential shape
-function[risetime,decaytime,width,max_dvdt]=EventKinetics(event,time)
+function[risetime,decaytime,width]=EventKinetics(event,time)
 
     %first find the peak of the event and the corresponding time stamp
     peak=max(event);
